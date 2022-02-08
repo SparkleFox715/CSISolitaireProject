@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function start(){
     var deck1 = Array();
-    var deck2 = Array();
+
     deck1.push("OC");
     deck1.push("OD");
     deck1.push("OH");
@@ -61,58 +61,34 @@ function start(){
     deck1.push("QS");
 
 
-    deck2.push("OC");
-    deck2.push("OD");
-    deck2.push("OH");
-    deck2.push("OS");
-    deck2.push("2C");
-    deck2.push("2D");
-    deck2.push("2S");
-    deck2.push("3C");
-    deck2.push("2H");
-    deck2.push("3D");
-    deck2.push("3H");
-    deck2.push("3S");
-    deck2.push("4C");
-    deck2.push("4D");
-    deck2.push("4H");
-    deck2.push("4S");
-    deck2.push("5C");
-    deck2.push("5D");
-    deck2.push("5H");
-    deck2.push("5S");
-    deck2.push("6C");
-    deck2.push("6D");
-    deck2.push("6H");
-    deck2.push("6S");
-    deck2.push("7C");
-    deck2.push("7D");
-    deck2.push("7H");
-    deck2.push("7S");
-    deck2.push("8C");
-    deck2.push("8D");
-    deck2.push("8H");
-    deck2.push("8S");
-    deck2.push("9C");
-    deck2.push("9D");
-    deck2.push("9H");
-    deck2.push("9S");
-    deck2.push("AC");
-    deck2.push("AD");
-    deck2.push("AH");
-    deck2.push("AS");
-    deck2.push("JC");
-    deck2.push("JD");
-    deck2.push("JH");
-    deck2.push("JS");
-    deck2.push("KC");
-    deck2.push("KD");
-    deck2.push("KH");
-    deck2.push("KS");
-    deck2.push("QC");
-    deck2.push("QD");
-    deck2.push("QH");
-    deck2.push("QS");
+
+
+    shuffle(deck1);
+
+
+    var pile1 = Array();
+    var pile2 = Array();
+    
+
+
+    for(var i = 0; i<7; i++)
+    {
+        pile1.push(deck1.pop());
+        
+        pile2.push(deck1.pop());
+
+
+
+
+    }
+
+    console.log(pile1);
+    console.log(pile2);
+
+
+    
+
+
 
 
 
@@ -120,7 +96,23 @@ function start(){
                
         }
 
-
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+          
+            // While there remain elements to shuffle...
+            while (currentIndex != 0) {
+          
+              // Pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex--;
+          
+              // And swap it with the current element.
+              [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+          
+            return array;
+          }
 
 
 
