@@ -1,9 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('new_game').addEventListener('click', () => {
         start(); 
+    });document.getElementById('card1').addEventListener('click', () => {
+    });
+    document.getElementById('card2').addEventListener('click', () => {
+    });
+    document.getElementById('card3').addEventListener('click', () => {
+    });
+    document.getElementById('card4').addEventListener('click', () => {
+    });
+    document.getElementById('card5').addEventListener('click', () => {
+    });
+    document.getElementById('card6').addEventListener('click', () => {
+    });
+    document.getElementById('card7').addEventListener('click', () => {
     });
 });
-
+var youscore=0;
+var compscore =0;
+var pile1 = Array();
+var pile2 = Array();
+function getCard(card){
+    var p2loc;
+    if (pile2.includes(pile1[card-1])){
+        for(var i =0;i<pile2.length;i++){
+            if(pile2[i]==pile1[card-1]){
+                p2loc =i;
+                break;
+            }
+        }
+    }
+    p2loc.splice(p2loc);
+    pile1.splice(card-1);
+    var youscore = document.getElementById("Yourscore").value = "Your score: "+youscore;
+}
 function start(){
     var deck1 = Array();
 
@@ -66,8 +96,6 @@ function start(){
     shuffle(deck1);
 
 
-    var pile1 = Array();
-    var pile2 = Array();
     
 
 
