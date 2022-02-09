@@ -73,8 +73,20 @@ function start(){
 
     for(var i = 0; i<7; i++)
     {
-        pile1.push(deck1.pop());
-        
+
+
+        var temp = deck1.pop()
+        pile1.push(temp);
+        var img = document.createElement("img");
+ 
+img.src = temp+".png"; 
+console.log("card"+ (i+1));
+var x = document.getElementById("card"+ (i+1)); 
+x.appendChild(img); 
+
+
+
+
         pile2.push(deck1.pop());
 
 
