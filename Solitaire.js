@@ -1,19 +1,27 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('new_game').addEventListener('click', () => {
         start(); 
     });document.getElementById('card1').addEventListener('click', () => {
+        getCard(1);
     });
     document.getElementById('card2').addEventListener('click', () => {
+        getCard(2);
     });
     document.getElementById('card3').addEventListener('click', () => {
+        getCard(3);
     });
     document.getElementById('card4').addEventListener('click', () => {
+        getCard(4);
     });
     document.getElementById('card5').addEventListener('click', () => {
+        getCard(5);
     });
     document.getElementById('card6').addEventListener('click', () => {
+        getCard(6);
     });
     document.getElementById('card7').addEventListener('click', () => {
+        getCard(7);
     });
 });
 var youscore=0;
@@ -21,26 +29,32 @@ var compscore =0;
 var pile1 = Array();
 var pile2 = Array();
 function getCard(card){
-    var p2loc;
-    if (pile2.includes(pile1[card-1])){
+    var p2loc=-1;
+    var face= pile1[card].substring(pile1.length-1, pile1.length);
         for(var i =0;i<pile2.length;i++){
-            if(pile2[i]==pile1[card-1]){
+            if(pile2[i].includes(face)){
                 p2loc =i;
                 break;
             }
         }
-    }
-    p2loc.splice(p2loc);
-    pile1.splice(card-1);
+        if(p2loc!=-1){
+        console.log(p2loc);
+        console.log(card);
+        pile2.splice(p2loc,1);
+        pile1.splice(card-1,1);
+        youscore++;
+        }
+    
+
     var youscore = document.getElementById("Yourscore").value = "Your score: "+youscore;
 }
 function start(){
     var deck1 = Array();
 
-    deck1.push("OC");
-    deck1.push("OD");
-    deck1.push("OH");
-    deck1.push("OS");
+    deck1.push("0C");
+    deck1.push("0D");
+    deck1.push("0H");
+    deck1.push("0S");
     deck1.push("2C");
     deck1.push("2D");
     deck1.push("2S");
